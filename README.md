@@ -22,18 +22,18 @@ La società che gestisce il cinema vuole dotarsi di uno strumento per la program
 3. Apri il progetto nella tua IDE preferita.
 
 4. Configura il database MySQL:
-    - Crea un database vuoto chiamato "asstelefonia".
+    - Crea un database vuoto chiamato "cinemille".
     - Modifica le impostazioni di connessione al database nel file `application.properties` nella directory `src/main/resources`.
    ```
-      spring.jpa.hibernate.ddl-auto=validate
-      spring.datasource.url=jdbc:mysql://localhost:3306/asstelefonia
+      spring.jpa.hibernate.ddl-auto=update
+      spring.datasource.url=jdbc:mysql://localhost:3306/cinemille
       spring.datasource.username=root
       spring.datasource.driver-class-name =com.mysql.cj.jdbc.Driver
       spring.jpa.show-sql=true
       spring.thymeleaf.prefix=classpath:/templates/
       spring.thymeleaf.suffix=.html
    ```
-- Importa il file asstelefonia.sql nel database
+- Importa il file cinemille.sql nel database
 
 5. Fai il Run dell'applicazione
 
