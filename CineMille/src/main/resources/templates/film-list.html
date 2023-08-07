@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Interrogazione Endpoint Lista Totale Film</title>
+</head>
+<body>
+<h1>Interrogazione Endpoint</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Titolo</th>
+    <th>Regista</th>
+    <th>Genere</th>
+    <th>Durata</th>
+    <th>Data Uscita</th>
+    <th>Descrizione</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="film : ${films}">
+    <td th:text="${film.id}"></td>
+    <td th:text="${film.titolo}"></td>
+    <td th:text="${film.regista}"></td>
+    <td th:text="${film.genereFilm.nome}"></td>
+    <td th:text="${film.durata}"></td>
+    <td th:text="${film.dataUscitaFormatted}"></td>
+    <td th:text="${film.descrizione}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

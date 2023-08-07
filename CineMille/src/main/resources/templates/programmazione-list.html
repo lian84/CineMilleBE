@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Programmazioni</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Programmazioni</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Sala Cinema</th>
+        <th>Film</th>
+        <th>Data Inizio</th>
+        <th>Data Fine</th>
+        <th>Orario Proiezione</th>
+        <th>Giorni in programmazione</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="programmazione : ${programmazioni}">
+        <td th:text="${programmazione.id}"></td>
+        <td th:text="${programmazione.salaCinema.nome}"></td>
+        <td th:text="${programmazione.film.titolo}"></td>
+        <td th:text="${programmazione.dataInizioProFormatted}"></td>
+        <td th:text="${programmazione.dataFineProFormatted}"></td>
+        <td>
+            <span th:if="${programmazione.orarioProiezione == 1}">18:00 - 20:00</span>
+            <span th:if="${programmazione.orarioProiezione == 2}">20:00 - 22:00</span>
+            <span th:if="${programmazione.orarioProiezione == 3}">22:00 - 24:00</span>
+        </td>
+        <td th:text="${programmazione.giorniTotali}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Cancella Film</title>
+</head>
+<body>
+<h1>Cancella Film</h1>
+
+<form th:action="@{/delete/{id}}" method="post">
+  <label for="film">Seleziona un film:</label>
+  <select id="film" name="id" required>
+    <option value="">Seleziona un film</option>
+    <option value="1">Film 1</option>
+    <option value="2">Film 2</option>
+    <option value="37">Film 3</option>
+  </select>
+
+  <button type="submit">Cancella</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Crea Nuovo Film</title>
+</head>
+<body>
+<h1>Crea Nuovo Film</h1>
+
+<form action="/film/save" method="post">
+  <label for="titolo">Titolo:</label>
+  <input type="text" id="titolo" name="titolo" required>
+
+  <label for="regista">Regista:</label>
+  <input type="text" id="regista" name="regista" required>
+
+  <label for="genere">Genere:</label>
+  <select id="genere" name="genere" required>
+    <option th:each="genereFilm : ${generiFilm}" th:value="${genereFilm.id}" th:text="${genereFilm.nome}"></option>
+  </select>
+
+  <label for="durata">Durata (minuti):</label>
+  <input type="number" id="durata" name="durata" required>
+
+  <label for="dataUscita">Data di Uscita:</label>
+  <input type="date" id="dataUscita" name="dataUscita" required>
+
+  <label for="descrizione">Descrizione:</label>
+  <textarea id="descrizione" name="descrizione" required></textarea>
+
+  <button type="submit">Crea Film</button>
+</form>
+</body>
+</html>

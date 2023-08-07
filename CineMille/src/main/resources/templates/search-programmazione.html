@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ricerca Programmazione</title>
+</head>
+<body>
+<h1>Ricerca Programmazione per Sala e Intervallo Date</h1>
+<form th:action="@{/programmazione/search}" method="get">
+    <label for="sala">Sala Cinema:</label>
+    <select name="sala" id="sala">
+        <option th:each="sala : ${saleCinema}" th:value="${sala.id}" th:text="${sala.nome}"></option>
+    </select>
+    <br>
+    <label for="dataInizio">Data Inizio:</label>
+    <input type="date" name="dataInizioInt" id="dataInizioInt">
+    <br>
+    <label for="dataFine">Data Fine:</label>
+    <input type="date" name="dataFineInt" id="dataFineInt">
+    <br>
+    <button type="submit">Cerca Programmazione</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Risultati Ricerca Programmazione</title>
+  <style>
+        /* Stile per il layout della tabella */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Risultati Ricerca Programmazione</h1>
+<p>
+  Periodo selezionato: dal <span th:text="${dataInizioIntFormatted}"></span> al <span th:text="${dataFineIntFormatted}"></span>
+</p>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Sala Cinema</th>
+    <th>Film</th>
+    <th>Data Inizio programmazione</th>
+    <th>Data Fine programmazione</th>
+    <th>Orario Proiezione</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Itera sulla lista delle programmazioni e mostra i risultati -->
+  <!-- Assicurati di aver passato la lista delle programmazioni al model nell'endpoint del controller -->
+  <tr th:each="programmazione : ${programmazioni}">
+    <td th:text="${programmazione.id}"></td>
+    <td th:text="${programmazione.salaCinema.nome}"></td>
+    <td th:text="${programmazione.film.titolo}"></td>
+    <td th:text="${programmazione.dataInizioProFormatted}"></td>
+    <td th:text="${programmazione.dataFineFormatted}"></td>
+    <td>
+      <!-- Utilizza un if per mostrare le fasce orarie -->
+      <span th:if="${programmazione.orarioProiezione == 1}">18:00 - 20:00</span>
+      <span th:if="${programmazione.orarioProiezione == 2}">20:00 - 22:00</span>
+      <span th:if="${programmazione.orarioProiezione == 3}">22:00 - 24:00</span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
