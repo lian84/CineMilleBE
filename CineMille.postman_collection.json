@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "52b97d0f-e76d-410b-b01f-8fa3a0bb58bf",
+		"name": "CineMille",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28960402"
+	},
+	"item": [
+		{
+			"name": "CancellaFIlmPerID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/film/delete/{id}"
+			},
+			"response": []
+		},
+		{
+			"name": "ListaFilm",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/film/films"
+			},
+			"response": []
+		},
+		{
+			"name": "CreaFilm",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/film/film-create"
+			},
+			"response": []
+		},
+		{
+			"name": "RestAPI-> Ricerca per sala, data inizio, data fine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/programmazione/search?sala=1&dataInizioInt=2023-08-01&dataFineInt=2023-08-03",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"programmazione",
+						"search"
+					],
+					"query": [
+						{
+							"key": "sala",
+							"value": "1"
+						},
+						{
+							"key": "dataInizioInt",
+							"value": "2023-08-01"
+						},
+						{
+							"key": "dataFineInt",
+							"value": "2023-08-03"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RestAPI-> Ricerca in tutte le sale, data inizio, data fine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/programmazione/search-all?dataInizioInt=2023-07-01&dataFineInt=2023-08-02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"programmazione",
+						"search-all"
+					],
+					"query": [
+						{
+							"key": "dataInizioInt",
+							"value": "2023-07-01"
+						},
+						{
+							"key": "dataFineInt",
+							"value": "2023-08-02"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RestAPI-> Tutta la programmazione",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/programmazione/all"
+			},
+			"response": []
+		},
+		{
+			"name": "RestAPI-> Programmazione di ogni Film nel tempo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/films"
+			},
+			"response": []
+		},
+		{
+			"name": "RestAPI-> Tutta la programmazione terminata ad oggi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/programmazione-passata"
+			},
+			"response": []
+		}
+	]
+}
