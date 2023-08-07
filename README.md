@@ -42,20 +42,22 @@ La società che gestisce il cinema vuole dotarsi di uno strumento per la program
 1. Run CineMilleApplication.
 
 2. Accedi all'applicazione utilizzando il tuo browser preferito e vai all'URL: `http://localhost:8080` da qui potrai consultare le pagine:
-   a. http://localhost:8080/film/films -> sará possibile vedere la lista di tutti i film presenti a catalogo(tutti i record presenti nella tabella film)
-   b. http://localhost:8080/film/detail/{id} -> inserendo al posto del parametro {id} un numero che va da 1 a 26(al momento) sará possibile vedere i dettagli del film
-   c. http://localhost:8080/film/film-create -> é presente un form dove inserire i dati per un nuovo film
-   d. http://localhost:8080/programmazione/list -> la lista di tutte le programmazioni
-   e. http://localhost:8080/programmazione/search-programmazione -> dove inserire la sala, la data di inizio intevallo e la data di fine intervallo
-   f. DELETE http://localhost:8080/film/delete/{idFilm} -> in {idFilm} inserire l'id del film da cancellare
+   1. http://localhost:8080/film/films -> sará possibile vedere la lista di tutti i film presenti a catalogo(tutti i record presenti nella tabella film)
+   2. http://localhost:8080/film/detail/{id} -> inserendo al posto del parametro {id} un numero che va da 1 a 26(al momento) sará possibile vedere i dettagli del film
+   3. http://localhost:8080/film/film-create -> é presente un form dove inserire i dati per un nuovo film
+   4. http://localhost:8080/programmazione/list -> la lista di tutte le programmazioni
+   5. http://localhost:8080/programmazione/search-programmazione -> dove inserire la sala, la data di inizio intevallo e la data di fine intervallo
+   6. DELETE http://localhost:8080/film/delete/{idFilm} -> in {idFilm} inserire l'id del film da cancellare
+----------------      
    - RestApi(puoi utilizzare anche il file per PostMan presente nella repository)
-   g. GET http://localhost:8080/api/programmazione/search?sala=1&dataInizioInt=2023-08-01&dataFineInt=2023-08-03 -> é possibile fare una ricerca per sala e per date
-   h. GET http://localhost:8080/api/programmazione/search-all?dataInizioInt=2023-07-01&dataFineInt=2023-08-02 -> ricerca in tutte le sale per un intervallo scelto
-   i. GET http://localhost:8080/api/programmazione/all -> tutta la programmazione
-   l. GET http://localhost:8080/api/films -> programmazione di ogni Film(contiene tutte le volte che il film é stato in programmazione
-   m. GET http://localhost:8080/api/programmazione-passata -> tutta la programmazione passata fino alla data di oggi(dinamica)
+   1. GET http://localhost:8080/api/programmazione/search?sala=1&dataInizioInt=2023-08-01&dataFineInt=2023-08-03 -> é possibile fare una ricerca per sala e per date
+   2. GET http://localhost:8080/api/programmazione/search-all?dataInizioInt=2023-07-01&dataFineInt=2023-08-02 -> ricerca in tutte le sale per un intervallo scelto
+   3. GET http://localhost:8080/api/programmazione/all -> tutta la programmazione
+   4. GET http://localhost:8080/api/films -> programmazione di ogni Film(contiene tutte le volte che il film é stato in programmazione
+   5. GET http://localhost:8080/api/programmazione-passata -> tutta la programmazione passata fino alla data di oggi(dinamica)
 
-4. É presente anche un altra repository per il front page in Angular che sfutta le RestApi
+É presente anche un altra repository CineMilleFE per il front page in Angular che sfutta le RestApi.
+Nella repository é presente anche un file da importare su PostMan per testare RestApi.
 
 ## Struttura del Progetto
 
